@@ -37,5 +37,5 @@ jobs:
 
       - name: Invalidate Cache
         run: |
-          gsutil -m setmeta -h "Cache-Control:public, max-age=1" gs://GCP_BUCKET/container/build/index.html
-          gsutil -m setmeta -h "Cache-Control:public, max-age=1" gs://GCP_BUCKET/container/build/*.js
+          gsutil -m setmeta -h "Cache-Control:public, max-age=1" gs://$GCP_BUCKET/container/build/index.html
+          gsutil -m setmeta -h "Cache-Control:public, max-age=1" gs://$GCP_BUCKET/container/build/*.js
