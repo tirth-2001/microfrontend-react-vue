@@ -55,7 +55,6 @@ export default function SignIn({ onSignIn }) {
 
 	return (
 		<Container component='main' maxWidth='xs'>
-			<div>Hi from signin</div>
 			<div className={classes.paper}>
 				<Avatar className={classes.avatar}>
 					<LockOutlinedIcon />

@@ -71,7 +71,6 @@ export default function Album() {
 			<main>
 				{/* Hero unit */}
 				<div className={classes.heroContent}>
-					<p>Hi from Marketing Landing Page</p>
 					<Container maxWidth='sm'>
 						<Typography
 							component='h1'
