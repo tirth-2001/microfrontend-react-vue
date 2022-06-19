@@ -19,7 +19,7 @@ jobs:
       GCP_BUCKET: ${{ secrets.GCP_BUCKET }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - run: yarn
       - run: yarn build
         env:
@@ -34,3 +34,8 @@ jobs:
 
       - name: Upload to GCP bucket
         run: gsutil -m rsync -d -c -r dist gs://$GCP_BUCKET/container/build
+
+      - name: Invalidate Cache
+        run: |
+          gsutil -m setmeta -h "Cache-Control:public, max-age=1" gs://GCP_BUCKET/container/build/index.html
+          gsutil -m setmeta -h "Cache-Control:public, max-age=1" gs://GCP_BUCKET/container/build/*.js

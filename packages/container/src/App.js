@@ -32,7 +32,7 @@ export default () => {
 		<Router history={history}>
 			<StylesProvider generateClassName={generateClassName}>
 				<div>
-					<p>Hi from Container</p>
+					<p>Hi from Container 1</p>
 					<Header
 						onSignOut={() => setIsSignedIn(false)}
 						isSignedIn={isSignedIn}
