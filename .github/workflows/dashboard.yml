@@ -17,6 +17,7 @@ jobs:
 
     env:
       GCP_BUCKET: ${{ secrets.GCP_BUCKET }}
+      PRODUCTION_DOMAIN: ${{ secrets.PRODUCTION_DOMAIN }}
 
     steps:
       - uses: actions/checkout@v3
