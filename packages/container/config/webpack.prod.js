@@ -4,12 +4,13 @@ const commonConfig = require('./webpack.common')
 const packageJson = require('../package.json')
 
 const domain = process.env.PRODUCTION_DOMAIN
+const bucket = process.env.GCP_BUCKET
 
 const prodConfig = {
 	mode: 'production',
 	output: {
 		filename: '[name].[contenthash].js',
-		publicPath: '/mfe-landing-page/container/build/',
+		publicPath: `/${bucket}/container/build/`,
 	},
 	plugins: [
 		new ModuleFederationPlugin({

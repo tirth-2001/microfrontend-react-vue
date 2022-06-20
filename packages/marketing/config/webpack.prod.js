@@ -3,11 +3,13 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 const packageJson = require('../package.json')
 const commonConfig = require('./webpack.common')
 
+const bucket = process.env.GCP_BUCKET
+
 const prodConfig = {
 	mode: 'production',
 	output: {
 		filename: '[name].[contenthash].js',
-		publicPath: '/marketing/build/',
+		publicPath: `/${bucket}/marketing/build/`,
 	},
 	plugins: [
 		new ModuleFederationPlugin({
